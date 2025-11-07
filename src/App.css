@@ -31,9 +31,21 @@ section {
   position: relative;
 }
 
+@media (max-width: 1024px) {
+  section {
+    padding: 80px 0;
+  }
+}
+
 @media (max-width: 768px) {
   section {
     padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 50px 0;
   }
 }
 

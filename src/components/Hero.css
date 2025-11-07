@@ -460,6 +460,7 @@
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 40px;
   }
 
   .hero-visual {
@@ -485,16 +486,36 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 70px;
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .hero-container {
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    gap: 30px;
+  }
+
   .hero-name {
     font-size: 2.5rem;
+    line-height: 1.2;
   }
 
   .hero-title {
     font-size: 1.4rem;
   }
 
+  .greeting-text {
+    font-size: 1rem;
+  }
+
   .hero-description {
     font-size: 1rem;
+    margin-bottom: 30px;
   }
 
   .btn {
@@ -505,317 +526,113 @@
   .hero-visual {
     height: 300px;
   }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .floating-icon {
+    font-size: 2rem;
+  }
+
+  .icon-brain {
+    top: 10%;
+    left: 5%;
+  }
+
+  .icon-code {
+    top: 15%;
+    right: 10%;
+  }
+
+  .icon-ai {
+    bottom: 20%;
+    left: 8%;
+  }
+
+  .icon-surgery {
+    bottom: 15%;
+    right: 5%;
+  }
+
+  .brain-svg {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .code-text {
+    font-size: 10px;
+  }
+
+  .orb-1, .orb-2, .orb-3 {
+    display: none;
+  }
 }
 
-/* Add these new styles to your existing Hero.css */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding-top: 80px;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  .hero-container {
+    padding: 0 15px;
+  }
+
+  .hero-name {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  .greeting-text {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .hero-visual {
+    height: 250px;
+  }
+
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .hero-social {
+    gap: 15px;
+  }
+
+  .floating-icon {
+    font-size: 1.5rem;
+  }
+
+  .brain-svg {
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
 }
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.floating-shapes {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.floating-shape {
-  position: absolute;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  opacity: 0.1;
-  border-radius: 50%;
-}
-
-.floating-shape:nth-child(odd) {
-  width: 80px;
-  height: 80px;
-}
-
-.floating-shape:nth-child(even) {
-  width: 40px;
-  height: 40px;
-}
-
-/* Enhanced greeting styles */
-.greeting {
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.greeting-underline {
-  width: 60px;
-  height: 3px;
-  background: var(--gradient-2);
-  margin-top: 8px;
-  border-radius: 2px;
-}
-
-/* Title enhancements */
-.title-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.title-underline {
-  width: 100px;
-  height: 2px;
-  background: var(--gradient-2);
-  margin-top: 10px;
-  border-radius: 2px;
-}
-
-/* Expertise tags */
-.expertise-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-
-.expertise-tag {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 217, 255, 0.2);
-  border-radius: 25px;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-.tag-icon {
-  color: var(--primary);
-  font-size: 0.8rem;
-}
-
-/* Enhanced button styles */
-.btn {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-sparkle {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.btn-primary:hover .btn-sparkle {
-  opacity: 0.3;
-}
-
-/* Animation Scene */
-.animation-scene {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* DNA Helix */
-.dna-helix {
-  position: relative;
-  width: 200px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-}
-
-.dna-node {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: var(--primary);
-  border-radius: 50%;
-  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.8));
-}
-
-.dna-node:nth-child(odd) {
-  left: 45%;
-}
-
-.dna-node:nth-child(even) {
-  left: 55%;
-}
-
-.dna-strand {
-  position: absolute;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent, var(--primary), transparent);
-  opacity: 0.6;
-}
-
-.left-strand {
-  left: 45%;
-}
-
-.right-strand {
-  left: 55%;
-}
-
-/* Tech Orbs */
-.tech-orb {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid;
-  backdrop-filter: blur(10px);
-}
-
-.ai-orb {
-  top: 20%;
-  left: 20%;
-  background: rgba(0, 217, 255, 0.1);
-  border-color: rgba(0, 217, 255, 0.5);
-}
-
-.med-orb {
-  bottom: 20%;
-  right: 20%;
-  background: rgba(124, 58, 237, 0.1);
-  border-color: rgba(124, 58, 237, 0.5);
-}
-
-.dev-orb {
-  top: 50%;
-  right: 10%;
-  transform: translateY(-50%);
-  background: rgba(245, 158, 11, 0.1);
-  border-color: rgba(245, 158, 11, 0.5);
-}
-
-.orb-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 600;
-}
-
-.orb-icon {
-  font-size: 1.5rem;
-}
-
-.ai-orb .orb-icon {
-  color: #00d9ff;
-}
-
-.med-orb .orb-icon {
-  color: #7c3aed;
-}
-
-.dev-orb .orb-icon {
-  color: #f59e0b;
-}
-
-/* Data Points */
-.data-points {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.data-point {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--primary);
-  border-radius: 50%;
-  filter: drop-shadow(0 0 6px rgba(0, 217, 255, 0.8));
-}
-
-/* Connection Lines */
-.connection-lines {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.connection-line {
-  filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.6));
-}
-
-/* Stats Overlay */
-.stats-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  gap: 20px;
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 1.2rem;
-  font-weight: 700;
-  background: var(--gradient-2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.stat-label {
-  font-size: 0.7rem;
-  color: var(--text-secondary);
-  margin-top: 2px;
-}
-
-/* Enhanced scroll indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-/* Keep all your existing styles and just add these new ones */
 

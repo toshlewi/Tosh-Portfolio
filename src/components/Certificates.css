@@ -136,18 +136,111 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 1024px) {
+  .certificates {
+    padding: 80px 0;
+  }
+
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .section-header {
+    margin-bottom: 50px;
+  }
+}
+
 @media (max-width: 768px) {
+  .certificates {
+    padding: 60px 0;
+  }
+
   .certificates-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .cert-gradient {
+    height: 120px;
+  }
+
+  .cert-icon {
+    font-size: 3rem;
+  }
+
+  .cert-content {
+    padding: 25px;
   }
 
   .cert-header {
     flex-direction: column;
     gap: 10px;
+    align-items: flex-start;
   }
 
   .cert-header h3 {
     font-size: 1.2rem;
+  }
+
+  .cert-date {
+    font-size: 0.85rem;
+  }
+
+  .cert-description {
+    font-size: 0.9rem;
+  }
+
+  .cert-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificates {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .cert-gradient {
+    height: 100px;
+  }
+
+  .cert-icon {
+    font-size: 2.5rem;
+  }
+
+  .cert-content {
+    padding: 20px;
+  }
+
+  .cert-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .cert-issuer {
+    font-size: 0.9rem;
+  }
+
+  .cert-description {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .cert-actions {
+    flex-direction: column;
+  }
+
+  .cert-btn {
+    font-size: 0.85rem;
+    padding: 10px 15px;
   }
 }
 

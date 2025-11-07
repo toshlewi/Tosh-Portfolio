@@ -1,0 +1,821 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--primary);
+  top: -200px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--secondary);
+  bottom: -150px;
+  right: -150px;
+  animation-delay: 5s;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent);
+  top: 50%;
+  right: 10%;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text {
+  z-index: 2;
+}
+
+.greeting {
+  margin-bottom: 20px;
+}
+
+.greeting-text {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.hero-name {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.name-line {
+  display: block;
+}
+
+.name-line.accent {
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.title-text {
+  display: block;
+}
+
+.gradient-text {
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.highlight {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--gradient-2);
+  color: var(--text-primary);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 217, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.hero-social {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--bg-dark);
+}
+
+.hero-visual {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medtech-animation {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.brain-svg {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  position: relative;
+  z-index: 2;
+}
+
+.brain-outline {
+  animation: brainPulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.5));
+}
+
+@keyframes brainPulse {
+  0%, 100% {
+    opacity: 0.8;
+    stroke-width: 3;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 4;
+  }
+}
+
+.neural-network {
+  opacity: 0.6;
+}
+
+.neural-line {
+  stroke: var(--primary);
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+  animation: neuralFlow 2s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(0, 217, 255, 0.8));
+}
+
+@keyframes neuralFlow {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 20;
+    opacity: 0.6;
+  }
+}
+
+.neural-node {
+  fill: var(--primary);
+  filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.8));
+  animation: nodePulse 2s ease-in-out infinite;
+}
+
+.neural-node:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    r: 8;
+    opacity: 0.8;
+  }
+  50% {
+    r: 12;
+    opacity: 1;
+  }
+}
+
+.code-elements {
+  opacity: 0.7;
+}
+
+.code-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  animation: codeGlow 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.6));
+}
+
+.code-text:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.code-text:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.code-text:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.code-text:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+@keyframes codeGlow {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.medical-cross {
+  opacity: 0.8;
+  animation: crossPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes crossPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 3rem;
+  filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.6));
+  z-index: 3;
+}
+
+.icon-brain {
+  top: 15%;
+  left: 10%;
+}
+
+.icon-code {
+  top: 20%;
+  right: 15%;
+}
+
+.icon-ai {
+  bottom: 25%;
+  left: 12%;
+}
+
+.icon-surgery {
+  bottom: 20%;
+  right: 10%;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
+}
+
+.particle:nth-child(odd) {
+  background: var(--secondary);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.8);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.scroll-arrow {
+  width: 2px;
+  height: 30px;
+  background: var(--primary);
+  position: relative;
+}
+
+.scroll-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-visual {
+    height: 400px;
+    order: -1;
+  }
+
+  .hero-name {
+    font-size: 3.5rem;
+  }
+
+  .hero-description {
+    margin: 0 auto 40px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  .hero-visual {
+    height: 300px;
+  }
+}
+
+/* Add these new styles to your existing Hero.css */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-shape {
+  position: absolute;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
+.floating-shape:nth-child(odd) {
+  width: 80px;
+  height: 80px;
+}
+
+.floating-shape:nth-child(even) {
+  width: 40px;
+  height: 40px;
+}
+
+/* Enhanced greeting styles */
+.greeting {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.greeting-underline {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-2);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* Title enhancements */
+.title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title-underline {
+  width: 100px;
+  height: 2px;
+  background: var(--gradient-2);
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+/* Expertise tags */
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.expertise-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 25px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.tag-icon {
+  color: var(--primary);
+  font-size: 0.8rem;
+}
+
+/* Enhanced button styles */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sparkle {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover .btn-sparkle {
+  opacity: 0.3;
+}
+
+/* Animation Scene */
+.animation-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* DNA Helix */
+.dna-helix {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.dna-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.8));
+}
+
+.dna-node:nth-child(odd) {
+  left: 45%;
+}
+
+.dna-node:nth-child(even) {
+  left: 55%;
+}
+
+.dna-strand {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+  opacity: 0.6;
+}
+
+.left-strand {
+  left: 45%;
+}
+
+.right-strand {
+  left: 55%;
+}
+
+/* Tech Orbs */
+.tech-orb {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  backdrop-filter: blur(10px);
+}
+
+.ai-orb {
+  top: 20%;
+  left: 20%;
+  background: rgba(0, 217, 255, 0.1);
+  border-color: rgba(0, 217, 255, 0.5);
+}
+
+.med-orb {
+  bottom: 20%;
+  right: 20%;
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+.dev-orb {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+.orb-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.orb-icon {
+  font-size: 1.5rem;
+}
+
+.ai-orb .orb-icon {
+  color: #00d9ff;
+}
+
+.med-orb .orb-icon {
+  color: #7c3aed;
+}
+
+.dev-orb .orb-icon {
+  color: #f59e0b;
+}
+
+/* Data Points */
+.data-points {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.data-point {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px rgba(0, 217, 255, 0.8));
+}
+
+/* Connection Lines */
+.connection-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.connection-line {
+  filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.6));
+}
+
+/* Stats Overlay */
+.stats-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Enhanced scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Keep all your existing styles and just add these new ones */
+

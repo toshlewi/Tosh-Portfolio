@@ -8,6 +8,9 @@ import {
   SiTypescript,
   SiReact,
   SiNodedotjs,
+  SiNextdotjs,
+  SiExpress,
+  SiTailwindcss,
   SiGit,
   SiGithub,
   SiPostgresql,
@@ -33,12 +36,15 @@ const Skills = () => {
       ],
     },
     {
-      title: 'Web Technologies',
+      title: 'JavaScript Frameworks & Libraries',
       icon: '🌐',
       skills: [
         { name: 'React.js', icon: SiReact, level: 90 },
+        { name: 'Next.js', icon: SiNextdotjs, level: 85 },
         { name: 'Node.js', icon: SiNodedotjs, level: 85 },
+        { name: 'Express.js', icon: SiExpress, level: 85 },
         { name: 'HTML5', icon: SiHtml5, level: 90 },
+        { name: 'Tailwind CSS', icon: SiTailwindcss, level: 88 },
         { name: 'CSS3', icon: SiCss3, level: 85 },
       ],
     },
@@ -151,7 +157,11 @@ const Skills = () => {
             <SiPython className="scroll-icon" />
             <SiJavascript className="scroll-icon" />
             <SiReact className="scroll-icon" />
+            <SiNextdotjs className="scroll-icon" />
             <SiNodedotjs className="scroll-icon" />
+            <SiExpress className="scroll-icon" />
+            <SiTailwindcss className="scroll-icon" />
+            <SiHtml5 className="scroll-icon" />
             <SiGit className="scroll-icon" />
             <SiGithub className="scroll-icon" />
             <SiPostgresql className="scroll-icon" />
@@ -162,9 +172,11 @@ const Skills = () => {
             <SiPython className="scroll-icon" />
             <SiJavascript className="scroll-icon" />
             <SiReact className="scroll-icon" />
+            <SiNextdotjs className="scroll-icon" />
             <SiNodedotjs className="scroll-icon" />
-            <SiGit className="scroll-icon" />
-            <SiGithub className="scroll-icon" />
+            <SiExpress className="scroll-icon" />
+            <SiTailwindcss className="scroll-icon" />
+            <SiHtml5 className="scroll-icon" />
           </div>
         </div>
       </div>

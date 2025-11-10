@@ -212,155 +212,202 @@ const Hero = () => {
 
           <div className="hero-visual">
             <div className="medtech-animation">
-              {/* Main Animation Container */}
-              <div className="animation-scene">
-                
-                {/* Central DNA Helix */}
-                <div className="dna-helix">
-                  {[...Array(30)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="dna-node"
-                      animate={{
-                        y: [0, -20, 0],
-                        opacity: [0.5, 1, 0.5],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: i * 0.1,
-                        ease: "easeInOut"
-                      }}
-                    />
-                  ))}
-                  <div className="dna-strand left-strand"></div>
-                  <div className="dna-strand right-strand"></div>
-                </div>
-
-                {/* Rotating Tech Orbs */}
-                <motion.div 
-                  className="tech-orb ai-orb"
-                  animate={{
-                    rotate: 360,
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    rotate: {
-                      duration: 20,
-                      repeat: Infinity,
-                      ease: "linear"
-                    },
-                    scale: {
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }
-                  }}
-                >
-                  <div className="orb-content">
-                    <FaBrain className="orb-icon" />
-                    <span>AI/ML</span>
-                  </div>
-                </motion.div>
-
-                <motion.div 
-                  className="tech-orb med-orb"
-                  animate={{
-                    rotate: -360,
-                    scale: [1, 1.15, 1],
-                  }}
-                  transition={{
-                    rotate: {
-                      duration: 25,
-                      repeat: Infinity,
-                      ease: "linear"
-                    },
-                    scale: {
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }
-                  }}
-                >
-                  <div className="orb-content">
-                    <FaStethoscope className="orb-icon" />
-                    <span>Medicine</span>
-                  </div>
-                </motion.div>
-
-                <motion.div 
-                  className="tech-orb dev-orb"
-                  animate={{
-                    rotate: 360,
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    rotate: {
-                      duration: 18,
-                      repeat: Infinity,
-                      ease: "linear"
-                    },
-                    scale: {
-                      duration: 2.5,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }
-                  }}
-                >
-                  <div className="orb-content">
-                    <FaCode className="orb-icon" />
-                    <span>Dev</span>
-                  </div>
-                </motion.div>
-
-                {/* Floating Data Points */}
-                <div className="data-points">
-                  {[...Array(12)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="data-point"
-                      animate={{
-                        y: [0, -40, 0],
-                        x: [0, Math.random() * 30 - 15, 0],
-                        opacity: [0.3, 1, 0.3],
-                      }}
-                      transition={{
-                        duration: Math.random() * 3 + 2,
-                        repeat: Infinity,
-                        delay: Math.random() * 2,
-                        ease: "easeInOut"
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Connection Lines */}
-                <svg className="connection-lines" viewBox="0 0 400 400">
-                  <motion.path
-                    className="connection-line"
-                    d="M200,100 Q250,150 200,200 Q150,250 200,300"
-                    stroke="url(#lineGradient)"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeDasharray="5,5"
-                    animate={{
-                      strokeDashoffset: [0, 20],
+              {/* Holographic Grid Background */}
+              <div className="holo-grid">
+                {[...Array(20)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="grid-line"
+                    initial={{ opacity: 0 }}
+                    animate={{ 
+                      opacity: [0.1, 0.3, 0.1],
+                      scaleY: [1, 1.02, 1]
                     }}
                     transition={{
-                      duration: 2,
+                      duration: 3,
                       repeat: Infinity,
-                      ease: "linear"
+                      delay: i * 0.1,
                     }}
                   />
-                  <defs>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#00d9ff" />
-                      <stop offset="100%" stopColor="#7c3aed" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                ))}
               </div>
 
+              {/* Central Rotating Ring System */}
+              <div className="ring-system">
+                <motion.div 
+                  className="tech-ring ring-1"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  <div className="ring-glow"></div>
+                </motion.div>
+                <motion.div 
+                  className="tech-ring ring-2"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                >
+                  <div className="ring-glow"></div>
+                </motion.div>
+                <motion.div 
+                  className="tech-ring ring-3"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                >
+                  <div className="ring-glow"></div>
+                </motion.div>
+              </div>
+
+              {/* Central Core */}
+              <motion.div 
+                className="central-core"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  boxShadow: [
+                    "0 0 40px rgba(0, 217, 255, 0.5)",
+                    "0 0 80px rgba(124, 58, 237, 0.8)",
+                    "0 0 40px rgba(0, 217, 255, 0.5)"
+                  ]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <motion.div 
+                  className="core-inner"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                >
+                  <FaBrain className="core-icon" />
+                </motion.div>
+              </motion.div>
+
+              {/* Orbiting Tech Icons */}
+              <motion.div
+                className="orbit-container"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              >
+                <motion.div 
+                  className="orbit-item orbit-1"
+                  whileHover={{ scale: 1.3 }}
+                >
+                  <div className="orbit-icon-wrapper">
+                    <FaStethoscope className="orbit-icon" />
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="orbit-container"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              >
+                <motion.div 
+                  className="orbit-item orbit-2"
+                  whileHover={{ scale: 1.3 }}
+                >
+                  <div className="orbit-icon-wrapper">
+                    <FaCode className="orbit-icon" />
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="orbit-container"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+              >
+                <motion.div 
+                  className="orbit-item orbit-3"
+                  whileHover={{ scale: 1.3 }}
+                >
+                  <div className="orbit-icon-wrapper">
+                    <FaRobot className="orbit-icon" />
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Particle System */}
+              <div className="particle-field">
+                {[...Array(30)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="tech-particle"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                    }}
+                    animate={{
+                      y: [0, -30, 0],
+                      opacity: [0, 1, 0],
+                      scale: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: Math.random() * 3 + 2,
+                      repeat: Infinity,
+                      delay: Math.random() * 3,
+                      ease: "easeInOut"
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Hexagon Pattern */}
+              <div className="hex-pattern">
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="hexagon"
+                    animate={{
+                      opacity: [0.1, 0.4, 0.1],
+                      scale: [1, 1.05, 1],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      delay: i * 0.3,
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Data Stream */}
+              <svg className="data-stream" viewBox="0 0 400 400">
+                <motion.circle
+                  cx="200"
+                  cy="200"
+                  r="120"
+                  stroke="url(#streamGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeDasharray="10,5"
+                  animate={{ strokeDashoffset: [0, -30] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.circle
+                  cx="200"
+                  cy="200"
+                  r="160"
+                  stroke="url(#streamGradient2)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  strokeDasharray="8,4"
+                  animate={{ strokeDashoffset: [0, 24] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                />
+                <defs>
+                  <linearGradient id="streamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#00d9ff" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.6" />
+                  </linearGradient>
+                  <linearGradient id="streamGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#00d9ff" stopOpacity="0.4" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
           </div>
         </div>

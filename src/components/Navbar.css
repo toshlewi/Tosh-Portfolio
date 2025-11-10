@@ -11,6 +11,11 @@
   border-bottom: 1px solid transparent;
 }
 
+.navbar.hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
 .navbar.scrolled {
   background: rgba(10, 10, 15, 0.95);
   border-bottom: 1px solid var(--border);
@@ -31,7 +36,7 @@
   font-size: 1.8rem;
   font-weight: 700;
   cursor: pointer;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .logo-text {

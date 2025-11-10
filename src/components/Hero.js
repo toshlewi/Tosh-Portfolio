@@ -361,36 +361,6 @@ const Hero = () => {
                 </svg>
               </div>
 
-              {/* Stats Display */}
-              <div className="stats-overlay">
-                <motion.div 
-                  className="stat-item"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1 }}
-                >
-                  <div className="stat-number">100%</div>
-                  <div className="stat-label">Medical Passion</div>
-                </motion.div>
-                <motion.div 
-                  className="stat-item"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.2 }}
-                >
-                  <div className="stat-number">AI</div>
-                  <div className="stat-label">Innovation</div>
-                </motion.div>
-                <motion.div 
-                  className="stat-item"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.4 }}
-                >
-                  <div className="stat-number">Code</div>
-                  <div className="stat-label">Expertise</div>
-                </motion.div>
-              </div>
             </div>
           </div>
         </div>

@@ -562,7 +562,7 @@
   }
 
   .hero-visual {
-    height: 280px;
+    display: none;
   }
 
   .medtech-animation {
@@ -625,7 +625,7 @@
   }
 
   .hero-visual {
-    height: 240px;
+    display: none;
   }
 
   .tech-orb {

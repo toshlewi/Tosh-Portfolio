@@ -31,6 +31,8 @@ body {
   background: var(--bg-dark);
   color: var(--text-primary);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 code {
@@ -40,6 +42,9 @@ code {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Custom Scrollbar */

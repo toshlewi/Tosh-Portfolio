@@ -2,6 +2,9 @@
   min-height: 100vh;
   background: var(--bg-dark);
   position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Animated Background */

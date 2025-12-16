@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lewis Gitonga Muriuki - CV</title>
+    <style>
+      :root {
+        --text: #111827;
+        --muted: #4b5563;
+        --line: #e5e7eb;
+        --chip: #f3f4f6;
+        --accent: #2563eb;
+        --accent-2: #7c3aed;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: #ffffff;
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 36px 28px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 22px;
+        align-items: start;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .headline {
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .contact {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px 14px;
+      }
+
+      .contact h2 {
+        margin: 0 0 10px;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .contact a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        color: var(--accent);
+      }
+
+      .contact-grid {
+        display: grid;
+        gap: 8px;
+        font-size: 14px;
+        color: var(--text);
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding-top: 18px;
+      }
+
+      section {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 16px;
+      }
+
+      section h2 {
+        margin: 0 0 12px;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .item {
+        padding: 12px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .item:first-of-type {
+        padding-top: 0;
+        border-top: none;
+      }
+
+      .row {
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+
+      .title {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .desc {
+        margin-top: 6px;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        background: var(--chip);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 10px;
+        font-size: 13px;
+        color: var(--text);
+        white-space: nowrap;
+      }
+
+      .chip strong {
+        color: var(--accent-2);
+      }
+
+      .top-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .btn {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 999px;
+        padding: 10px 14px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .btn.primary {
+        border-color: transparent;
+        color: #fff;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      }
+
+      .btn:hover {
+        filter: brightness(0.98);
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+        .page {
+          padding: 0;
+        }
+        .top-actions {
+          display: none;
+        }
+        section,
+        .contact {
+          border-color: #d1d5db;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div>
+          <h1>Lewis Gitonga Muriuki</h1>
+          <div class="headline">
+            Medical student and AI/ML developer building practical solutions at the intersection of healthcare,
+            data, and software engineering. Experienced in Python, data analysis, machine learning, and
+            full-stack web development.
+            <div class="top-actions">
+              <button class="btn primary" onclick="window.print()">Print / Save as PDF</button>
+              <button class="btn" onclick="navigator.clipboard?.writeText(window.location.href)">Copy Link</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="contact">
+          <h2>Contact</h2>
+          <div class="contact-grid">
+            <div><strong>Email:</strong> <a href="mailto:adelewigitz@gmail.com">adelewigitz@gmail.com</a></div>
+            <div><strong>Phone:</strong> <a href="tel:0711527211">0711527211</a></div>
+            <div><strong>Location:</strong> Nairobi, Kenya</div>
+            <div>
+              <strong>GitHub:</strong>
+              <a href="https://github.com/toshlewi" target="_blank" rel="noopener noreferrer">github.com/toshlewi</a>
+            </div>
+            <div>
+              <strong>LinkedIn:</strong>
+              <a
+                href="https://www.linkedin.com/in/lewis-gitonga-12783b34a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >linkedin.com/in/lewis-gitonga-12783b34a</a
+              >
+            </div>
+          </div>
+        </aside>
+      </header>
+
+      <main>
+        <section>
+          <h2>Core Skills</h2>
+          <div class="chips">
+            <span class="chip"><strong>Data:</strong> Python (Data Analysis)</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">NumPy</span>
+            <span class="chip">Data Visualization (Matplotlib/Seaborn)</span>
+            <span class="chip"><strong>BI:</strong> Prompt BI (Power BI-style)</span>
+            <span class="chip">SQL (Analytics)</span>
+            <span class="chip"><strong>AI/ML:</strong> Scikit-learn</span>
+            <span class="chip">TensorFlow</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip"><strong>Web:</strong> React.js</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Express.js</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">Git/GitHub</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Projects</h2>
+
+          <div class="item">
+            <div class="row">
+              <div class="title">Fundi-Client Connection Platform</div>
+              <div class="meta">React.js, Node.js, Supabase, Mapbox API</div>
+            </div>
+            <div class="desc">
+              Full-stack platform connecting service providers (fundis) with clients, built for real-world service
+              matching.
+            </div>
+            <ul>
+              <li>Real-time location tracking</li>
+              <li>Service matching algorithms</li>
+              <li>Secure payment processing</li>
+              <li>Rating system</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="title">AI-Integrated Hospital Management System</div>
+              <div class="meta">Python, TensorFlow, React.js, MongoDB</div>
+            </div>
+            <div class="desc">
+              Hospital management system with AI-driven features for patient care optimization and administrative
+              efficiency.
+            </div>
+            <ul>
+              <li>Patient flow prediction models</li>
+              <li>Diagnostic suggestion system</li>
+              <li>Resource allocation optimization</li>
+              <li>Patient history analysis</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="title">Foul Language Detection AI</div>
+              <div class="meta">Python, NLP, Transformers, Flask</div>
+            </div>
+            <div class="desc">
+              Machine learning system to detect and filter inappropriate language in real-time using NLP.
+            </div>
+            <ul>
+              <li>Custom NLP model training</li>
+              <li>Context-aware analysis</li>
+              <li>Reduced false positives</li>
+              <li>API deployment</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Education & Experience</h2>
+
+          <div class="item">
+            <div class="row">
+              <div class="title">Bachelor of Medicine and Bachelor of Surgery (MBChB)</div>
+              <div class="meta">University of Nairobi · Expected 2028</div>
+            </div>
+            <div class="desc">Pursuing comprehensive medical education with focus on clinical skills and medical research.</div>
+            <ul>
+              <li>Conducted research on hemophilia</li>
+              <li>Completed surgical training electives</li>
+              <li>Presented findings at university research symposium</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="title">Software Development (AI Specialization)</div>
+              <div class="meta">Power Learn Project (PLP) Africa · Feb 2025 - Jul 2025</div>
+            </div>
+            <div class="desc">
+              Intensive program covering Python, Web Technologies, Databases, and Software Engineering with
+              specialization in AI for Software Engineering.
+            </div>
+            <ul>
+              <li>Certified AI/ML Developer</li>
+              <li>Full-stack web development</li>
+              <li>Machine learning and deep learning</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="title">Medical Research - Hemophilia</div>
+              <div class="meta">University of Nairobi · 2025</div>
+            </div>
+            <div class="desc">
+              Conducted literature review on current hemophilia treatments and analyzed patient data to identify
+              patterns in treatment outcomes.
+            </div>
+            <ul>
+              <li>Literature review and data analysis</li>
+              <li>Patient outcome pattern identification</li>
+              <li>Research presentation</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="title">Clinical Electives - Surgical Training</div>
+              <div class="meta">University of Nairobi · 2024-2025</div>
+            </div>
+            <div class="desc">
+              Rotations in general surgery, orthopedics, and emergency medicine with hands-on clinical experience.
+            </div>
+            <ul>
+              <li>Surgical procedure assistance</li>
+              <li>Patient management planning</li>
+              <li>Post-operative care development</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Certifications & Awards</h2>
+          <div class="item">
+            <div class="row">
+              <div class="title">Software Development (AI Specialization)</div>
+              <div class="meta">Power Learn Project (PLP) Africa · Feb 2025 - Jul 2025</div>
+            </div>
+            <div class="desc">
+              Completed a 16-week program covering Python, Web Technologies, Databases, and Software Engineering.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <div class="title">ITCILO Hackathon Certificate</div>
+              <div class="meta">International Training Centre of the ILO · 2025</div>
+            </div>
+            <div class="desc">
+              Recognized for developing an innovative solution in a competitive hackathon environment.
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

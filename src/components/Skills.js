@@ -22,6 +22,7 @@ import {
   SiCss3,
   SiSupabase,
 } from 'react-icons/si';
+import { FaChartBar } from 'react-icons/fa';
 
 const Skills = () => {
   const skillCategories = [
@@ -33,6 +34,18 @@ const Skills = () => {
         { name: 'JavaScript', icon: SiJavascript, level: 85 },
         { name: 'TypeScript', icon: SiTypescript, level: 80 },
         { name: 'SQL', icon: SiPostgresql, level: 85 },
+      ],
+    },
+    {
+      title: 'Data Analysis & BI',
+      icon: '📊',
+      skills: [
+        { name: 'Python (Data Analysis)', icon: SiPython, level: 88 },
+        { name: 'Pandas', icon: null, level: 85 },
+        { name: 'NumPy', icon: null, level: 82 },
+        { name: 'Data Visualization (Matplotlib/Seaborn)', icon: null, level: 80 },
+        { name: 'SQL (Analytics Queries)', icon: SiPostgresql, level: 85 },
+        { name: 'Prompt BI (Power BI-style analytics)', icon: FaChartBar, level: 80 },
       ],
     },
     {

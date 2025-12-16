@@ -6,7 +6,7 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   margin-bottom: 80px;
 }
@@ -187,12 +187,42 @@
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-category {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .category-header {
+    margin-bottom: 18px;
+    padding-bottom: 16px;
   }
 
   .scroll-icon {
     font-size: 3rem;
     width: 60px;
     height: 60px;
+  }
+
+  .scrolling-icons-container::before,
+  .scrolling-icons-container::after {
+    width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 90px 0;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+
+  .skill-level {
+    font-size: 0.8rem;
   }
 }
 

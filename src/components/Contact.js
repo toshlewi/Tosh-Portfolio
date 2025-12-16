@@ -93,8 +93,8 @@ const Contact = () => {
                 qualifications, and achievements.
               </p>
               <a
-                href="/Lewis-Gitonga-Muriuki-CV.html"
-                download
+                href="/cv.html"
+                download="Lewis-Gitonga-Muriuki-CV.html"
                 className="cv-download-btn"
               >
                 <FaDownload />

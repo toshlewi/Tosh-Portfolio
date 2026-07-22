@@ -168,7 +168,7 @@ const Works = () => {
       <motion.div
         variants={fadeIn("up", "", 0.25, 1)}
         className="
-          mt-20
+          mt-6
           grid
           grid-cols-1
           md:grid-cols-2

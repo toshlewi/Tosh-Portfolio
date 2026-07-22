@@ -12,11 +12,14 @@ const SectionWrapper = (Component, idName) =>
         className="
           relative
           w-full
-          py-20
+          py-12
           px-6
           sm:px-10
+          sm:py-14
           lg:px-16
+          lg:py-16
           xl:px-24
+          xl:py-18
         "
       >
         <div

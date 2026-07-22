@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { navLinks } from '../constants'
 import { menu, close } from '../assets'
@@ -8,6 +8,14 @@ const Navbar = () => {
   const [active, setActive] = useState("")
   const [toggle, setToggle] = useState(false)
 
+  useEffect(() => {
+    if (!toggle) return
+
+    const closeMenu = () => setToggle(false)
+    window.addEventListener('resize', closeMenu)
+    return () => window.removeEventListener('resize', closeMenu)
+  }, [toggle])
+
   return (
     <>
       <nav
@@ -15,7 +23,7 @@ const Navbar = () => {
           display: 'grid',
           gridTemplateColumns: 'auto 1fr auto',
           alignItems: 'center',
-          padding: '18px 48px',
+          padding: '16px 20px',
           position: 'fixed',
           top: 0,
           left: 0,
@@ -92,16 +100,31 @@ const Navbar = () => {
             justifySelf: 'end',
           }}
         >
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
+          <button
+            type="button"
+            aria-label="Toggle navigation"
+            onClick={() => setToggle((prev) => !prev)}
             style={{
-              width: 28,
-              height: 28,
+              width: 40,
+              height: 40,
+              borderRadius: '50%',
+              border: '1px solid rgba(255,255,255,0.12)',
+              background: 'rgba(255,255,255,0.05)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               cursor: 'pointer',
             }}
-            onClick={() => setToggle(!toggle)}
-          />
+          >
+            <img
+              src={toggle ? close : menu}
+              alt=""
+              style={{
+                width: 20,
+                height: 20,
+              }}
+            />
+          </button>
         </div>
 
         {/* Mobile Dropdown */}
@@ -110,14 +133,14 @@ const Navbar = () => {
             className="md:hidden"
             style={{
               position: 'absolute',
-              top: 75,
-              right: 20,
+              top: 70,
+              right: 16,
+              left: 16,
               background:
-                'linear-gradient(135deg, rgba(26,26,46,0.95), rgba(15,15,35,0.95))',
+                'linear-gradient(135deg, rgba(26,26,46,0.97), rgba(15,15,35,0.97))',
               border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: 16,
-              padding: '18px 24px',
-              minWidth: 180,
+              padding: '16px 18px',
               zIndex: 50,
               boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
             }}
@@ -145,7 +168,7 @@ const Navbar = () => {
                       textDecoration: 'none',
                       fontSize: 15,
                       display: 'block',
-                      padding: '6px 0',
+                      padding: '8px 0',
                     }}
                   >
                     {link.title}

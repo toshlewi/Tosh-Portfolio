@@ -91,7 +91,7 @@ const Experience = () => {
 
       <motion.div
         variants={fadeIn("up", "", 0.2, 1)}
-        className="mt-20"
+        className="mt-8 sm:mt-10"
       >
         <VerticalTimeline
           lineColor="#312e81"

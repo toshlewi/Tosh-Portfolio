@@ -1,189 +1,108 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { navLinks } from '../constants'
-import { menu, close } from '../assets'
-import logo from '../assets/logo.png'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { navLinks } from "../constants";
+import { menu, close } from "../assets";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [active, setActive] = useState("")
-  const [toggle, setToggle] = useState(false)
-
-  useEffect(() => {
-    if (!toggle) return
-
-    const closeMenu = () => setToggle(false)
-    window.addEventListener('resize', closeMenu)
-    return () => window.removeEventListener('resize', closeMenu)
-  }, [toggle])
+  const [active, setActive] = useState("");
+  const [toggle, setToggle] = useState(false);
 
   return (
     <>
-      <nav
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'auto 1fr auto',
-          alignItems: 'center',
-          padding: '16px 20px',
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 20,
-          backgroundColor: '#050816',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        {/* Logo */}
-        <Link
-          to="/"
-          onClick={() => {
-            setActive("")
-            window.scrollTo(0, 0)
-          }}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            textDecoration: 'none',
-          }}
-        >
-          <img
-            src={logo}
-            alt="logo"
-            style={{
-              width: 38,
-              height: 38,
-              objectFit: 'contain',
-              borderRadius: '50%',
-            }}
-          />
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#050816]/90 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+          <div className="flex items-center justify-between h-16 sm:h-20">
 
-          <span style={{ color: '#fff', fontSize: 16, fontWeight: 500 }}>
-            Lewis <span style={{ color: '#7F77DD' }}>| Gitonga</span>
-          </span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <ul
-          className="hidden md:flex"
-          style={{
-            listStyle: 'none',
-            display: 'flex',
-            justifyContent: 'center',
-            gap: 36,
-            margin: '0 auto',
-            padding: 0,
-          }}
-        >
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <a
-                href={`#${link.id}`}
-                onClick={() => setActive(link.title)}
-                style={{
-                  color: active === link.title ? '#fff' : '#9ca3af',
-                  textDecoration: 'none',
-                  fontSize: 15,
-                  transition: 'color 0.2s ease',
-                }}
-              >
-                {link.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Menu Button */}
-        <div
-          className="md:hidden"
-          style={{
-            justifySelf: 'end',
-          }}
-        >
-          <button
-            type="button"
-            aria-label="Toggle navigation"
-            onClick={() => setToggle((prev) => !prev)}
-            style={{
-              width: 40,
-              height: 40,
-              borderRadius: '50%',
-              border: '1px solid rgba(255,255,255,0.12)',
-              background: 'rgba(255,255,255,0.05)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-            }}
-          >
-            <img
-              src={toggle ? close : menu}
-              alt=""
-              style={{
-                width: 20,
-                height: 20,
+            {/* Logo */}
+            <Link
+              to="/"
+              onClick={() => {
+                setActive("");
+                window.scrollTo(0, 0);
               }}
-            />
-          </button>
-        </div>
-
-        {/* Mobile Dropdown */}
-        {toggle && (
-          <div
-            className="md:hidden"
-            style={{
-              position: 'absolute',
-              top: 70,
-              right: 16,
-              left: 16,
-              background:
-                'linear-gradient(135deg, rgba(26,26,46,0.97), rgba(15,15,35,0.97))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: 16,
-              padding: '16px 18px',
-              zIndex: 50,
-              boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
-            }}
-          >
-            <ul
-              style={{
-                listStyle: 'none',
-                margin: 0,
-                padding: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 16,
-              }}
+              className="flex items-center gap-3"
             >
+              <img
+                src={logo}
+                alt="logo"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-contain"
+              />
+
+              <p className="text-white font-semibold text-base sm:text-lg">
+                Lewis
+                <span className="text-[#915EFF]"> | Gitonga</span>
+              </p>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <ul className="hidden md:flex items-center gap-10 lg:gap-14">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
-                    onClick={() => {
-                      setToggle(false)
-                      setActive(link.title)
-                    }}
-                    style={{
-                      color: active === link.title ? '#fff' : '#9ca3af',
-                      textDecoration: 'none',
-                      fontSize: 15,
-                      display: 'block',
-                      padding: '8px 0',
-                    }}
+                    onClick={() => setActive(link.title)}
+                    className={`transition duration-300 text-[15px] lg:text-base ${
+                      active === link.title
+                        ? "text-white"
+                        : "text-gray-400 hover:text-[#915EFF]"
+                    }`}
                   >
                     {link.title}
                   </a>
                 </li>
               ))}
             </ul>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setToggle(!toggle)}
+              className="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/5"
+            >
+              <img
+                src={toggle ? close : menu}
+                alt="menu"
+                className="w-5 h-5 object-contain"
+              />
+            </button>
           </div>
-        )}
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden absolute left-0 top-full w-full bg-[#0b1020]/95 backdrop-blur-lg border-t border-white/10 transition-all duration-300 overflow-hidden ${
+            toggle
+              ? "max-h-[500px] opacity-100"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <ul className="flex flex-col py-5">
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  onClick={() => {
+                    setToggle(false);
+                    setActive(link.title);
+                  }}
+                  className={`block px-8 py-4 transition ${
+                    active === link.title
+                      ? "text-white bg-white/10"
+                      : "text-gray-400 hover:text-[#915EFF] hover:bg-white/5"
+                  }`}
+                >
+                  {link.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
 
       {/* Spacer */}
-      <div style={{ height: 75 }} />
+      <div className="h-16 sm:h-20"></div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
